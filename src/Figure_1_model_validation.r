@@ -6,6 +6,6 @@
 library(phenor)
 
 pdf("~/Figure_1_model_validation.pdf",7,5)
-model_validation(control = list(max.call = 40000,
+model_calibration(control = list(max.call = 40000,
                                 temperature = 10000))
 dev.off()

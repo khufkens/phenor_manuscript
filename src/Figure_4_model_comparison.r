@@ -7,6 +7,8 @@
 # run_model_comparison.r code.
 library(phenor)
 
+setwd("~/Dropbox/Research_Projects/working/phenocam_model_comparison/phenor_manuscript_repo/")
+
 # make sure you are in the phenor manuscript path
 # before loading the data
 comparison = readRDS("./data/pre_processed/comparison.rds")
@@ -36,12 +38,12 @@ plot(0,
 text(0.1,0.2,
      "ecodormacy",
      cex = 1.5,
-     col = "red",
+     col = "#ef8a62",
      pos = 4)
 text(0.55,0.2,
      "endo- and ectodormancy",
      cex = 1.5,
-     col = "blue",
+     col = "#67a9cf",
      pos = 4)
 
 par(mar=c(0,5,1,1))

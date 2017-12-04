@@ -35,55 +35,58 @@ tiles = c(
   11934, 11935, 11754, 11755,
   11756, 12294, 11937)
 
-download all daymet tiles, include the preceeding year
-as we need this data too (see start_yr).
-daymetr::download_daymet_tiles(tiles = tiles,
-                               param = c("tmin","tmax"),
-                               start = 2010,
-                               end = 2011)
+#download all daymet tiles, include the preceeding year
+#as we need this data too (see start_yr).
+# daymetr::download_daymet_tiles(tiles = tiles,
+#                                param = c("tmin","tmax"),
+#                                start = 2010,
+#                                end = 2011)
 
 # now calculate the mean daily temperature from tmin and tmax
-lapply(tiles, function(x)daymetr::daymet_tmean(path = path,
-                                               tile = x,
-                                               year = 2010,
-                                               internal = FALSE))
-
-lapply(tiles, function(x)daymetr::daymet_tmean(path = path,
-                                               tile = x,
-                                               year = 2011,
-                                               internal = FALSE))
+# lapply(tiles, function(x)daymetr::daymet_tile_tmean(path = path,
+#                                                tile = x,
+#                                                year = 2010,
+#                                                internal = FALSE))
+#
+# lapply(tiles, function(x)daymetr::daymet_tile_tmean(path = path,
+#                                                tile = x,
+#                                                year = 2011,
+#                                                internal = FALSE))
 
 # now format all tiles acoording to the phenor format
 # (default settings)
-lapply(tiles, function(x)daymet_data = format_daymet_tiles(
-  path = path,
-  tile = x,
-  year = 2011,
-  internal = FALSE))
+# lapply(tiles, function(x)daymet_data = format_daymet_tiles(
+#   path = path,
+#   tile = x,
+#   year = 2011,
+#   internal = FALSE))
 
-download_cmip5(path = path,
-               model = "IPSL-CM5A-MR",
-               scenario = "rcp85",
-               year = 2011)
-
-download_cmip5(path = path,
-               model = "IPSL-CM5A-MR",
-               scenario = "rcp85",
-               year = 2099)
+# download_cmip5(path = path,
+#                model = "IPSL-CM5A-MR",
+#                scenario = "rcp85",
+#                year = 2011)
+#
+# download_cmip5(path = path,
+#                model = "IPSL-CM5A-MR",
+#                scenario = "rcp85",
+#                year = 2099)
 
 # get cmip5 data for the end of the century
 # if file exists...
-format_cmip5(path = path,
-             year = 2100,
-             internal = FALSE)
-format_cmip5(path = path,
-             year = 2011,
-             internal = FALSE)
+#format_cmip5(path = path,
+#             year = 2100,
+#             internal = FALSE)
+#format_cmip5(path = path,
+#             year = 2011,
+#             internal = FALSE)
 
-cmip5_data_2011 = readRDS("~/phenor_cmip5_data_2011.rds")
-cmip5_data_2100 = readRDS("~/phenor_cmip5_data_2100.rds")
+cmip5_data_2011 = readRDS("~/Dropbox/Research_Projects/working/phenocam_model_comparison/data/phenor_cmip5_data_2011.rds")
+cmip5_data_2100 = readRDS("~/Dropbox/Research_Projects/working/phenocam_model_comparison/data/phenor_cmip5_data_2100.rds")
 
-comparison = readRDS(file.path(path.package("phenor"),"extdata/comparison.rds"))
+# download data
+download.file("https://github.com/khufkens/phenor_manuscript/raw/master/data/pre_processed/comparison.rds",
+              "./comparison.rds")
+comparison = readRDS("./comparison.rds")
 par = apply(comparison$phenocam_DB$modelled$PTT$parameters,2,mean)
 par_grass = apply(comparison$phenocam_GR$modelled$PTT$parameters,2,mean)
 
@@ -123,18 +126,21 @@ cmip5_map_2100 = mask(cmip5_map_2100, ocean_mask, maskvalue = NA)
 cmip5_map_2011_grass = mask(cmip5_map_2011_grass, ocean_mask, maskvalue = NA)
 cmip5_map_2100_grass = mask(cmip5_map_2100_grass, ocean_mask, maskvalue = NA)
 
-# select those land cover pixels
-# with more than 1/4 of the pixel covered
-# igbp classes 1/4/5/10 are included in the
-# package as igbp_#
-m = igbp_4 > 0.5 | igbp_5 > 0.5
-m[m==0] = NA
-m_grass = igbp_10 > 0.5
-m_grass[m_grass==0] = NA
-
 # create difference map
 cmip5_map_diff = cmip5_map_2100 - cmip5_map_2011
 cmip5_map_diff_grass = cmip5_map_2100_grass - cmip5_map_2011_grass
+
+# calculate the land cover density within the CMIP5 grid cells
+# this will take a while (defaults are calculate for IGBP classes 1, 4, 5, 10)
+cover_percentages = land_cover_density(src_raster = "MCD12Q1_IGBP_median_2001_2009.tif",
+                                      dest_raster = cmip5_map_2011,
+                                      internal = TRUE)
+
+# create the final masks
+m = cover_percentages$X4 > 0.5 | cover_percentages$X5 > 0.5
+m[m==0] = NA
+m_grass = cover_percentages$X10 > 0.5
+m_grass[m_grass==0] = NA
 
 # Generate the final plot comparing model output
 # across various scales and time frames use
@@ -152,16 +158,16 @@ layout(matrix(c(1,1,2,2,
               5, 4, byrow = TRUE))
 
 # define the colours to use
-cols = colorRampPalette(brewer.pal(9,'RdBu'))(100)
+cols = rev(colorRampPalette(brewer.pal(5,"BrBG"))(200))
 
 zlim =  c(100,200)
 zlim_delta = c(-60,5)
 ratio = abs(zlim_delta[1]/zlim_delta[2])
 
-ylgn = colorRampPalette(brewer.pal(5,"YlGn"))(50)
-ylorbr = colorRampPalette(brewer.pal(5,"YlOrBr"))(50/ratio)
-ylgn = ylgn[c(-1:-4)]
-ylorbr = ylorbr[-1]
+ylgn = colorRampPalette(brewer.pal(5,"Blues"))(50)
+ylorbr = colorRampPalette(brewer.pal(5,"Reds"))(50/ratio)
+#ylgn = ylgn[c(-1:-4)]
+#ylorbr = ylorbr[-1]
 cols_delta = c(rev(ylgn),ylorbr)
 
 # loop over all datasets and plot them in the
