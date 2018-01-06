@@ -1,4 +1,4 @@
-# phenor manuscript details
+# phenor manuscript demo and figures
 
 The code enclosed in this repository allows you to regenerate the demonstration data and figures (see below and in the output folder) of a worked example in the manuscript associated with the [phenor R package](https://github.com/khufkens/phenor).
 
