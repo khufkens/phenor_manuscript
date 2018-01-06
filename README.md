@@ -1,3 +1,6 @@
+
+[![DOI](https://zenodo.org/badge/108000940.svg)](https://zenodo.org/badge/latestdoi/108000940)
+
 # phenor manuscript demo and figures
 
 The code enclosed in this repository allows you to regenerate the demonstration data and figures (e.g. the figure below and others in the output folder) of a worked example in the manuscript associated with the [phenor R package](https://github.com/khufkens/phenor).
