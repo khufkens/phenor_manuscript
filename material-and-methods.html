@@ -74,17 +74,18 @@
 <li class="chapter" data-level="8" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i><b>8</b> Acknowledgements</a></li>
 <li class="chapter" data-level="9" data-path="code-data-availability.html"><a href="code-data-availability.html"><i class="fa fa-check"></i><b>9</b> Code &amp; Data availability</a></li>
 <li class="chapter" data-level="10" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>10</b> Reference</a></li>
-<li class="chapter" data-level="11" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>11</b> APPENDIX</a><ul>
-<li class="chapter" data-level="11.1" data-path="appendix.html"><a href="appendix.html#the-phenocam-network-data-processing-and-selection"><i class="fa fa-check"></i><b>11.1</b> The PhenoCam network, data processing and selection</a></li>
-<li class="chapter" data-level="11.2" data-path="appendix.html"><a href="appendix.html#the-phenocamr-r-package-methodology"><i class="fa fa-check"></i><b>11.2</b> The phenocamr R package: methodology</a><ul>
-<li class="chapter" data-level="11.2.1" data-path="appendix.html"><a href="appendix.html#outlier-detection-and-smoothing"><i class="fa fa-check"></i><b>11.2.1</b> Outlier detection and smoothing</a></li>
-<li class="chapter" data-level="11.2.2" data-path="appendix.html"><a href="appendix.html#phenophase-estimation"><i class="fa fa-check"></i><b>11.2.2</b> Phenophase estimation</a></li>
+<li class="chapter" data-level="11" data-path="appendix-s1.html"><a href="appendix-s1.html"><i class="fa fa-check"></i><b>11</b> APPENDIX S1</a><ul>
+<li class="chapter" data-level="11.1" data-path="appendix-s1.html"><a href="appendix-s1.html#the-phenocam-network-data-processing-and-selection"><i class="fa fa-check"></i><b>11.1</b> The PhenoCam network, data processing and selection</a></li>
+<li class="chapter" data-level="11.2" data-path="appendix-s1.html"><a href="appendix-s1.html#the-phenocamr-r-package-methodology"><i class="fa fa-check"></i><b>11.2</b> The phenocamr R package: methodology</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="appendix-s1.html"><a href="appendix-s1.html#outlier-detection-and-smoothing"><i class="fa fa-check"></i><b>11.2.1</b> Outlier detection and smoothing</a></li>
+<li class="chapter" data-level="11.2.2" data-path="appendix-s1.html"><a href="appendix-s1.html#phenophase-estimation"><i class="fa fa-check"></i><b>11.2.2</b> Phenophase estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="appendix.html"><a href="appendix.html#the-phenocamr-r-package-usage"><i class="fa fa-check"></i><b>11.3</b> The phenocamr R package: usage</a></li>
-<li class="chapter" data-level="11.4" data-path="appendix.html"><a href="appendix.html#the-daymetr-r-package"><i class="fa fa-check"></i><b>11.4</b> The daymetr R package</a></li>
-<li class="chapter" data-level="11.5" data-path="appendix.html"><a href="appendix.html#worked-example-statistical-results"><i class="fa fa-check"></i><b>11.5</b> Worked example statistical results</a></li>
-<li class="chapter" data-level="11.6" data-path="appendix.html"><a href="appendix.html#references"><i class="fa fa-check"></i><b>11.6</b> References</a></li>
+<li class="chapter" data-level="11.3" data-path="appendix-s1.html"><a href="appendix-s1.html#the-phenocamr-r-package-usage"><i class="fa fa-check"></i><b>11.3</b> The phenocamr R package: usage</a></li>
+<li class="chapter" data-level="11.4" data-path="appendix-s1.html"><a href="appendix-s1.html#the-daymetr-r-package"><i class="fa fa-check"></i><b>11.4</b> The daymetr R package</a></li>
+<li class="chapter" data-level="11.5" data-path="appendix-s1.html"><a href="appendix-s1.html#worked-example-statistical-results"><i class="fa fa-check"></i><b>11.5</b> Worked example statistical results</a></li>
+<li class="chapter" data-level="11.6" data-path="appendix-s1.html"><a href="appendix-s1.html#references"><i class="fa fa-check"></i><b>11.6</b> References</a></li>
 </ul></li>
+<li class="chapter" data-level="12" data-path="appendix-s2.html"><a href="appendix-s2.html"><i class="fa fa-check"></i><b>12</b> APPENDIX S2</a></li>
 </ul>
 
       </nav>
@@ -146,7 +147,7 @@
 <pre><code>results = estimate_phenology(par = optimal_par$par,
                     data = df,
                     model = “TT”)</code></pre>
-<p>The output will automatically be formatted as a map of phenology dates or a vector, depending on the input data class. However, running models across all grid cells of spatial data would provide a naively broad representation of land surface phenology. For example, only a small subset of the US is dominated by any particular plant functional type (PFT), such as deciduous broadleaf forests. In order to better differentiate between different dominant PFT we include a function land_cover_density() which calculates the percentage coverage of a particular MODIS MCD12Q1 IGBP land cover class (Friedl et al. 2010) within a given raster cell for a given location (i.e., CMIP5 data, see Figure @ref(fig:spatial_scaling)).</p>
+<p>The output will automatically be formatted as a map of phenology dates or a vector, depending on the input data class. However, running models across all grid cells of spatial data would provide a naively broad representation of land surface phenology. For example, only a small subset of the US is dominated by any particular plant functional type (PFT), such as deciduous broadleaf forests. In order to better differentiate between different dominant PFT we include a function land_cover_density() which calculates the percentage coverage of a particular MODIS MCD12Q1 IGBP land cover class (Friedl et al. 2010) within a given raster cell for a given location (i.e., CMIP5 data, see Figure <a href="discussion.html#fig:spatialscaling">4.1</a>).</p>
 <p>A wrapper function, model_calibration(), is provided for both the optimize_parameters() and estimate_phenology() functions which integrates the previously described steps providing both summary statistics (RMSE and AICc) and a plot (Figure <a href="material-and-methods.html#fig:validation">3.1</a> ) of the model fit. Likewise, the model_comparison() function serves as a wrapper for multi-model parameter optimization runs. For a visual comparison limited to two model runs we provide an arrow plot function, arrow_plot(), displaying directional changes in the modelled values between the model outputs (Figure <a href="material-and-methods.html#fig:arrow">3.2</a> ).</p>
 <div class="figure"><span id="fig:validation"></span>
 <img src="output/Figure_1_model_validation.png" alt="Model calibration output" width="1050" />
@@ -165,7 +166,118 @@ Figure 3.2: Arrow plot
 <h2><span class="header-section-number">3.2</span> A worked example: a quick model comparison</h2>
 <p>As a worked example we partially recreate the spring phenology model comparison by Basler (2016) using PhenoCam data. However, we note that a similar exercise could be executed with any of the other phenology data sources available through phenor. The model structures included in this worked example can be described by the three broad categories: (1) as simple linear regression to spring temperature (2) models explaining ecodormancy release only, (3) models explaining the release of endo- and ecodormancy. A reference NULL model assumes a fixed mean date of leaf unfolding.</p>
 <p>A total of 22 phenology models are included in the package (table 1). These include 20 spring phenology models including precipitation driven models, one fall senescence chilling degree day model and one grassland pollen release model. In our worked example of the phenor R package we will focus only on the 20 spring phenology models. A full list of the model structures and parameter ranges for the models are provided in Table 2 of Appendix S2 and included in the phenor library.</p>
-<p>TABLE 1</p>
+<hr />
+<p><strong>Table 1.</strong> Adapted from Basler (2016, Table 1). Overview of the phenological models for leaf unfolding and leaf senescence, and pollen release included in this study. The models are grouped by implemented processes and drivers: chilling temperatures (C), forcing temperatures (F), photoperiod (P), precipitation (R) and vapour pressure deficit (V). Function names in round brackets while full model structures are listed in Appendix S2 Table 1.</p>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="13%" />
+<col width="24%" />
+<col width="45%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Model Name</th>
+<th>Drivers</th>
+<th># of parameters</th>
+<th>References</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>NULL</td>
+<td>-</td>
+<td>1</td>
+<td>mean date of leaf unfolding</td>
+</tr>
+<tr class="even">
+<td>LIN</td>
+<td>F</td>
+<td>2</td>
+<td>linear regression against spring temperatures</td>
+</tr>
+<tr class="odd">
+<td>Thermal Time<sup>a</sup> (TT, TTs)</td>
+<td>F</td>
+<td>3(4)</td>
+<td>(De Reaumur 1735; Wang 1960; Cannell et al. 1983; Hänninen 1990; Hunter &amp; Lechowicz 1992; Kramer 1994; Leinonen et al. 1997; Chuine et al. 1999)</td>
+</tr>
+<tr class="even">
+<td>Chilling Degree Day (CDD)</td>
+<td>C</td>
+<td>3</td>
+<td>(Jeong &amp; Medvigy 2014)</td>
+</tr>
+<tr class="odd">
+<td>Photothermal-time<sup>a</sup> (PTT, PTTs)</td>
+<td>PF</td>
+<td>3(4)</td>
+<td>(Masle et al. 1989; Črepinšek et al. 2006)</td>
+</tr>
+<tr class="even">
+<td>M1<sup>a</sup> (M1s)</td>
+<td>PF</td>
+<td>4(5)</td>
+<td>(Blümel &amp; Chmielewski 2012)</td>
+</tr>
+<tr class="odd">
+<td>Alternating (AT)</td>
+<td>CF</td>
+<td>5</td>
+<td>(Cannell et al. 1983; Murray et al. 1989)</td>
+</tr>
+<tr class="even">
+<td>Sequential<sup>b</sup> (SQ, SQb)</td>
+<td>CF</td>
+<td>8</td>
+<td>(Hänninen 1990; Kramer 1994)</td>
+</tr>
+<tr class="odd">
+<td>Parallel (PA, PAb)</td>
+<td>CF</td>
+<td>9</td>
+<td>(Landsberg 1974; Hänninen 1990; Kramer 1994)</td>
+</tr>
+<tr class="even">
+<td>Unified (UN)</td>
+<td>CF</td>
+<td>9</td>
+<td>(Chuine 2000)</td>
+</tr>
+<tr class="odd">
+<td>Sequential M1<sup>b</sup> (SM1, SM1b)</td>
+<td>CPF</td>
+<td>9</td>
+<td>Combination with the M1 model</td>
+</tr>
+<tr class="even">
+<td>Parallel M1<sup>b</sup> (PM1, PM1b)</td>
+<td>CPF</td>
+<td>10</td>
+<td>Combination with the M1 model</td>
+</tr>
+<tr class="odd">
+<td>Unified M1 (UM1)</td>
+<td>CPF</td>
+<td>10</td>
+<td>Combination with the M1 model</td>
+</tr>
+<tr class="even">
+<td>Growing Season Index<sup>c</sup> (SGSI, AGSI)</td>
+<td>FPV</td>
+<td>7</td>
+<td>(Xin et al. 2015)</td>
+</tr>
+<tr class="odd">
+<td>Grassland Pollen model (GRP)</td>
+<td>FR</td>
+<td>5</td>
+<td>(García-Mozo et al. 2009)</td>
+</tr>
+</tbody>
+</table>
+<p><sup>a</sup> also calibrated using a sigmoid temperature response (Hänninen 1990; Kramer 1994). adding one parameter. <sup>b</sup> also calibrated using a bell-shaped chilling response (Chuine 2000). <sup>c</sup> calibrated using a cummulative response rather than the rolling mean.</p>
+<hr />
 <p>For this study we combined spring phenology dates based on PhenoCam 3-day summary data from the standardized PhenoCam Dataset (Richardson et al. 2017) with Daymet data (Thornton et al. 2017) for three common PFTs, deciduous broadleaf forests, evergreen needleleaf forest and grasslands. A total of 102 sites and 508 site years were included in our calibration/validation dataset, of which 63 were deciduous broadleaf forest sites (358 site years), 18 were evergreen needleleaf forest sites (63 site years) and 21 were grasslands (88 site years). Deciduous broadleaf sites which are moisture limited, and all sites outside Daymet coverage, were excluded from our analysis. The final selected sites span a large geographic area ranging from New Mexico to Southern Alaska, and Maine to California (Figure <a href="material-and-methods.html#fig:location">3.3</a>).</p>
 <div class="figure"><span id="fig:location"></span>
 <img src="output/Figure_3_site_location_map.png" alt="Site locations" width="1350" />
@@ -175,7 +287,7 @@ Figure 3.3: Site locations
 </div>
 <p>We acknowledge that phenological development as measured using PhenoCam data represent different physiological processes for different PFTs. For example, the phenology of deciduous forests or grasslands is closely linked to the development of new leaf tissues (Keenan et al. 2014; Hufkens et al. 2016) where evergreen forest phenology is determined by dehardening of existing needles at the end of the winter season. Thus, optimized model parameters and their interpretation are specific to each PFT.</p>
 <p>For all PFTs, model optimization were executed using the default generalized simulated annealing (GenSA) package minimizing the RMSE between the greenness rising PhenoCam phenophase estimations and model predictions (see Appendix S1). The optimizer was run for 40 000 iterations with a starting temperature of 10 000. To determine the influence of locations at the margin of the forest biome on model optimizations a subset of sites centrally located within the deciduous forest biome was created (Melaas et al. 2016, Appendix S2 Table 2). This subset was optimized separately and compared to results for the complete deciduous broadleaf dataset. We assess proper convergence of the optimized parameters by initializing the optimizer using 12 random sets of parameters. We report mean and standard deviations of the RMSE between observations and predictions on the optimized parameter values for all PFTs and the subset generated for deciduous forest sites. We compare model performance with a log transformed ANOVA, combined with a post-hoc Tukey HSD test. Model errors are evaluated for normality using a Shapiro-Wilk test.</p>
-<p>For illustrative purposes we produce overview maps (Figure @ref(fig:spatial_scaling)) of spatial patterns both in hindcast and forecast mode. In hindcast mode we use 1x1 km Daymet gridded data across New England, while we present the difference in predicted spring phenology (ΔDOY) between years 2100 and 2011 for forecast CMIP5 IPSL-CM5A-MR (Mid-Resolution Institut Pierre Simon Laplace Climate Model 5) model runs, across the contiguous US. The Thermal Time (TT) and Accumulated Growing Season Index models were optimized for deciduous broadleaf and grassland PhenoCam data, respectively. For forecast data only pixels dominated by their particular PFT are displayed, limiting a naively broad interpretation of the results.</p>
+<p>For illustrative purposes we produce overview maps (Figure <a href="discussion.html#fig:spatialscaling">4.1</a>) of spatial patterns both in hindcast and forecast mode. In hindcast mode we use 1x1 km Daymet gridded data across New England, while we present the difference in predicted spring phenology (ΔDOY) between years 2100 and 2011 for forecast CMIP5 IPSL-CM5A-MR (Mid-Resolution Institut Pierre Simon Laplace Climate Model 5) model runs, across the contiguous US. The Thermal Time (TT) and Accumulated Growing Season Index models were optimized for deciduous broadleaf and grassland PhenoCam data, respectively. For forecast data only pixels dominated by their particular PFT are displayed, limiting a naively broad interpretation of the results.</p>
 <p>Our comparison of 20 spring phenology models across three PFT showed that most models were significantly different from the NULL model, with the exception of the SGSI model in the evergreen PFT (post-hoc Tukey HSD test, p &lt; 0.001, Figure <a href="material-and-methods.html#fig:comparison">3.4</a>). The model performance of the centrally located deciduous broadleaf sites was marginally greater (RMSE: ~7.6±0.7 days) compared to the complete deciduous broadleaf dataset (RMSE: ~7.9±1.2 days). This difference between the full deciduous broadleaf forest dataset and those more centrally within the biome suggests an influence of geographic location on model error.</p>
 <div class="figure"><span id="fig:comparison"></span>
 <img src="output/Figure_4_model_comparison.png" alt="model comparison" width="1200" />
@@ -184,12 +296,6 @@ Figure 3.4: model comparison
 </p>
 </div>
 <p>The influence of different model structures on individual values was visualized using the arrow plot (Figure <a href="material-and-methods.html#fig:arrow">3.2</a>) between two model runs. When visually comparing the Thermal Time (TT) and the Photothermal Time (PTT) models small changes are noted (<a href="material-and-methods.html#fig:arrow">3.2</a>). Both models accumulate growing degree days where the PTT model adds a photoperiod component to the original TT model. In the PTT model leaf unfolding is therefore in part dependent on a daylength requirement in addition to thermal forcing. In our example, the addition of a daylength requirement shifts model results for early and late developing plants toward earlier leaf out dates, while at the same time shifting mid season developing plants toward later leaf out dates. Despite these changes overall model accuracy remains the same. A description of all statistical results is provided in Appendix S1, section 5.</p>
-<div class="figure">
-<img src="output/Figure_5_spatial_runs.png" alt="spatial scaling" width="1800" />
-<p class="caption">
-(#fig:spatial_scaling)spatial scaling
-</p>
-</div>
 </div>
 </div>
             </section>

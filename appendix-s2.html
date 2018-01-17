@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="material-and-methods.html">
+<link rel="prev" href="appendix-s1.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -103,21 +103,91 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">2</span> Introduction</h1>
-<p>Seasonal leaf development, or vegetation phenology, is strongly linked to seasonal changes in temperature and considered an indicator of climate change. Currently, rising temperatures due to climate change have moved spring forward in time by 2.3 to 5.2 days per decade since the 1970s (Rosenzweig et al. 2007). Vegetation phenology hereby does not only disproportionately influence ecosystem productivity by advancing and delaying the season (Richardson et al. 2010, 2013), it also changes canopy properties such as albedo and atmospheric boundary layer properties (Sakai et al. 1997; Hollinger et al. 1999). As such, models of seasonal leaf development, rigorously validated against in-situ observations, are key to understanding how climate change will affect ecosystem productivity and biophysical vegetation properties.</p>
-<p>Luckily, phenology has been recorded by amateurs and professionals, such as national meteorological institutions, supporting contemporary analysis of past or ongoing climate change (Chuine et al. 2004). Recently, individual observations have been formalized into rigorous citizen science efforts through for example USA National Phenology Network (USA-NPN; <a href="https://www.usanpn.org/" class="uri">https://www.usanpn.org/</a>; Betancourt et al. 2005), Project Budburst (<a href="http://budburst.org/" class="uri">http://budburst.org/</a>). In addition, automated camera networks (i.e., the PhenoCam network, <a href="https://phenocam.sr.unh.edu/" class="uri">https://phenocam.sr.unh.edu/</a>; (Richardson et al. 2018)) or remote sensing (Zhang et al. 2003) provide a canopy wide continuous way of evaluating the development of vegetation across larger areas in a consistent and continuous fashion (White et al. 2009; Melaas et al. 2016). Numerous studies have demonstrated the value of the PhenoCam derived Gcc index, a measure of vegetation greenness as percentage green within a digital image, for characterizing the seasonal trajectory of vegetation color and activity (Keenan et al. 2014; Klosterman et al. 2014; Toomey et al. 2015; Hufkens et al. 2016). Similarly., the MODIS MCD12Q2 phenology product has been a proven source of phenological data (Chen et al. 2016).</p>
-<p>These observations of vegetation phenology allow us to estimate changes in the timing of vegetation development in response year to year variation in weather as well as climate change and climate variability (Chuine et al. 2004; Vitasse et al. 2009; Melaas et al. 2016). Most process-based models try to simulate the various internal and environmental influences and, to various degrees, take into account whole plant physiological status (paradormancy), internal factors of developing bud (endodormancy) and external factors driving or suppressing seasonal development (ecodormancy)(Lang et al. 1987).</p>
-<p>One of the first such ecodormancy models was the growing degree day model as proposed by De Reaumur dating back to 1735. Although vegetation phenology is often driven by temperature multiple additional constraints have been proposed including daylength, chilling degrees, precipitation, relative humidity or vapour pressure deficit (Hunter &amp; Lechowicz 1992; Chuine &amp; Cour 1999; García-Mozo et al. 2009; Laube et al. 2013, 2014; Xin et al. 2015). Similarly, fall senescence has been modelled using chilling degree days with additional constraints such as daylength (Archetti et al. 2013; Jeong &amp; Medvigy 2014; Gill et al. 2015). These various models are either used in isolation to address particular physiological questions or included in land surface models to scale phenological processes (Richardson et al. 2011). Model development, in isolation or coupled to larger land surface models, often integrate multiple environmental drivers which increases model complexity (Jeong &amp; Medvigy 2014; Chen et al. 2016). Yet, models which include more complex concepts, based upon growing degree days, do not necessarily perform better than a simple regression based approach. As such, model structures still explain a limited amount of the year-to-year variability, and fail to generalize well (Schaber &amp; Badeck 2003; Linkosalo et al. 2006; Fisher et al. 2007; Clark et al. 2014; Basler 2016). For example, model studies have shown that biologically “incorrect” models can be parameterized to provide good predictions but lacking any biological representation (Hunter &amp; Lechowicz 1992). A study by Migliavacca et al. (2012) has shown that between-model differences by the end of the century are almost as large as differences between-climate scenario values. As a consequence, different model assumptions will behave disproportionately different under future scenarios affecting their potential impacts and uncertainties (Migliavacca et al. 2012).</p>
-<p>With vegetation phenology as a first order control on ecosystem productivity, accurate and transparent model predictions of vegetation phenology in a changing climate are key. In order to facilitate easy model comparison and future development of new models we developed the phenor model framework for the R language and environment for statistical computing (R Core Team 2016). The phenor R package assimilates four important phenological records across a variety of ecosystem and plant functional types. The assimilated datasets provide extensive coverage in the US and Europe and results can be easily scaled globally using various gridded data products made accessible through the software. Here, we provide a worked example for the phenor R package using the recent standardized PhenoCam dataset (Richardson et al. 2017; <a href="http://phenocam.us" class="uri">http://phenocam.us</a>) to demonstrate the ease with which a suite of phenological models can be evaluated and scaled up from sites to regions and biomes, and extrapolated in both forecast and hindcast modes.</p>
+<div id="appendix-s2" class="section level1">
+<h1><span class="header-section-number">12</span> APPENDIX S2</h1>
+<p><img src="output/Appendix_S2_table_1.png" width="1094" /></p>
+<hr />
+<p><strong>Table 2.</strong> Site locations of the selection by Melaas et al. (2016) of deciduous broadleaf forests located centrally within the US deciduous broadleaf forest biome.</p>
+<table>
+<thead>
+<tr class="header">
+<th>PhenoCam site name</th>
+<th>latitude (decimal degrees)</th>
+<th>longitude (decimal degrees)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>harvard</td>
+<td>42.537800</td>
+<td>-72.171500</td>
+</tr>
+<tr class="even">
+<td>bartlettir</td>
+<td>44.064600</td>
+<td>-71.288100</td>
+</tr>
+<tr class="odd">
+<td>acadia</td>
+<td>44.376944</td>
+<td>-68.260833</td>
+</tr>
+<tr class="even">
+<td>mammothcave</td>
+<td>37.185833</td>
+<td>-86.101944</td>
+</tr>
+<tr class="odd">
+<td>nationalcapital</td>
+<td>38.888180</td>
+<td>-77.069496</td>
+</tr>
+<tr class="even">
+<td>dollysods</td>
+<td>39.099529</td>
+<td>-79.427041</td>
+</tr>
+<tr class="odd">
+<td>smokylook</td>
+<td>35.632529</td>
+<td>-83.943113</td>
+</tr>
+<tr class="even">
+<td>upperbuffalo</td>
+<td>35.863732</td>
+<td>-93.493222</td>
+</tr>
+<tr class="odd">
+<td>boundarywaters</td>
+<td>47.946702</td>
+<td>-91.495506</td>
+</tr>
+<tr class="even">
+<td>groundhog</td>
+<td>48.217400</td>
+<td>-82.155500</td>
+</tr>
+<tr class="odd">
+<td>umichbiological2</td>
+<td>45.562500</td>
+<td>-84.697600</td>
+</tr>
+<tr class="even">
+<td>queens</td>
+<td>44.565000</td>
+<td>-76.324000</td>
+</tr>
+</tbody>
+</table>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="material-and-methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="appendix-s1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
